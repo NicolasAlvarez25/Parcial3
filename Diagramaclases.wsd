@@ -1,0 +1,66 @@
+@startuml
+class Cliente {
+  +String tipoDocumento
+  +String documento
+  +String nombre
+  +String correo
+  +registrar()
+  +modificar()
+  +eliminar()
+  +consultar()
+}
+
+class FacturaCliente {
+  +String numeroFactura
+  +Date fecha
+  +Cliente cliente
+  +crear()
+  +modificar()
+  +eliminar()
+  +consultar()
+}
+
+class DetalleFactura {
+  +int cantidad
+  +float valorBruto
+  +float valorNeto
+  +float valorDescuento
+  +float valorTotal
+  +agregar()
+  +modificar()
+  +eliminar()
+  +consultar()
+}
+
+class Producto {
+  +String codigo
+  +String nombre
+  +String descripcion
+  +String categoria
+  +float valor
+  +registrar()
+  +modificar()
+  +eliminar()
+  +consultar()
+}
+
+class Inventario {
+  +String codigo
+  +int stock
+  +Date fechaIngreso
+  +float valorDescuento
+  +float porcentajeIVA
+  +Date fechaSalida
+  +registrarEntrada()
+  +registrarSalida()
+  +modificar()
+  +eliminar()
+  +consultar()
+}
+
+Cliente  <--  FacturaCliente
+FacturaCliente  <--  DetalleFactura
+Producto  <--  DetalleFactura
+Producto  <--  Inventario
+
+@enduml

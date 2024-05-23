@@ -1,0 +1,67 @@
+@startuml
+actor Usuario
+
+package "Gestión de Clientes" {
+  usecase UC_Cliente_Registrar as "Registrar Cliente"
+  usecase UC_Cliente_Modificar as "Modificar Cliente"
+  usecase UC_Cliente_Eliminar as "Eliminar Cliente"
+  usecase UC_Cliente_Consultar as "Consultar Cliente"
+}
+
+package "Gestión de Facturas" {
+  usecase UC_Factura_Crear as "Crear Factura"
+  usecase UC_Factura_Modificar as "Modificar Factura"
+  usecase UC_Factura_Eliminar as "Eliminar Factura"
+  usecase UC_Factura_Consultar as "Consultar Factura"
+}
+
+package "Gestión de Detalles de Facturas" {
+  usecase UC_Detalle_Agregar as "Agregar Detalle de Factura"
+  usecase UC_Detalle_Modificar as "Modificar Detalle de Factura"
+  usecase UC_Detalle_Eliminar as "Eliminar Detalle de Factura"
+  usecase UC_Detalle_Consultar as "Consultar Detalle de Factura"
+}
+
+package "Gestión de Productos" {
+  usecase UC_Producto_Registrar as "Registrar Producto"
+  usecase UC_Producto_Modificar as "Modificar Producto"
+  usecase UC_Producto_Eliminar as "Eliminar Producto"
+  usecase UC_Producto_Consultar as "Consultar Producto"
+}
+
+package "Gestión de Inventario" {
+  usecase UC_Inventario_RegistrarEntrada as "Registrar Entrada de Inventario"
+  usecase UC_Inventario_RegistrarSalida as "Registrar Salida de Inventario"
+  usecase UC_Inventario_Modificar as "Modificar Inventario"
+  usecase UC_Inventario_Eliminar as "Eliminar Inventario"
+  usecase UC_Inventario_Consultar as "Consultar Inventario"
+}
+
+Usuario -> UC_Cliente_Registrar
+Usuario -> UC_Cliente_Modificar
+Usuario -> UC_Cliente_Eliminar
+Usuario -> UC_Cliente_Consultar
+
+Usuario -> UC_Factura_Crear
+Usuario -> UC_Factura_Modificar
+Usuario -> UC_Factura_Eliminar
+Usuario -> UC_Factura_Consultar
+
+Usuario -> UC_Detalle_Agregar
+Usuario -> UC_Detalle_Modificar
+Usuario -> UC_Detalle_Eliminar
+Usuario -> UC_Detalle_Consultar
+
+Usuario -> UC_Producto_Registrar
+Usuario -> UC_Producto_Modificar
+Usuario -> UC_Producto_Eliminar
+Usuario -> UC_Producto_Consultar
+
+Usuario -> UC_Inventario_RegistrarEntrada
+Usuario -> UC_Inventario_RegistrarSalida
+Usuario -> UC_Inventario_Modificar
+Usuario -> UC_Inventario_Eliminar
+Usuario -> UC_Inventario_Consultar
+
+@enduml 
+

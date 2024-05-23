@@ -1,0 +1,20 @@
+@startuml
+actor Usuario
+participant Cliente
+participant FacturaCliente
+participant DetalleFactura
+participant Producto
+
+Usuario -> Cliente : consultar(documento)
+Cliente --> Usuario : datosCliente
+
+Usuario -> FacturaCliente : crear(numeroFactura, fecha, datosCliente)
+FacturaCliente --> Usuario : facturaCreada
+
+Usuario -> DetalleFactura : agregar(numeroFactura, cantidad, valorBruto, valorNeto, valorDescuento, valorTotal)
+DetalleFactura --> Usuario : detalleAgregado
+
+Usuario -> Producto : consultar(codigo)
+Producto --> Usuario : datosProducto
+
+@enduml
